@@ -110,7 +110,8 @@
       { "@type": "Question", "name": "¿Cómo sé qué batería necesito?", "acceptedAnswer": { "@type": "Answer", "text": "Te asesoramos sin compromiso. Con 20 años de experiencia, te ayudamos a elegir la batería correcta para tu auto según el modelo y el uso, para que dure y no te falle." } },
       { "@type": "Question", "name": "¿Qué marcas trabajás?", "acceptedAnswer": { "@type": "Answer", "text": "Trabajamos Baterías Moura y Baterías Mateo." } },
       { "@type": "Question", "name": "¿Qué zonas cubren?", "acceptedAnswer": { "@type": "Answer", "text": "Trabajamos en San Andrés y todo el Gran Buenos Aires. Si no estás seguro de si llegamos a tu zona, escribinos por WhatsApp y te confirmamos al toque." } },
-      { "@type": "Question", "name": "¿Cómo coordino el cambio?", "acceptedAnswer": { "@type": "Answer", "text": "Escribinos por WhatsApp al 11-5841-0072 (o llamanos). Coordinamos el horario, vamos a tu domicilio y resolvemos todo en el día." } }
+      { "@type": "Question", "name": "¿Cómo coordino el cambio?", "acceptedAnswer": { "@type": "Answer", "text": "Escribinos por WhatsApp al 11-5841-0072 (o llamanos). Coordinamos el horario, vamos a tu domicilio y resolvemos todo en el día." } },
+      { "@type": "Question", "name": "¿Cuál es el horario de atención?", "acceptedAnswer": { "@type": "Answer", "text": "Atendemos de lunes a viernes de 8 a 13 h y de 15 a 18:30 h, y sábados de 9 a 13 h." } }
     ]
   }
   </script>
@@ -363,10 +364,21 @@
   <!-- ============================================================= -->
   <!-- MARCAS                                                        -->
   <!-- ============================================================= -->
-  <section id="marcas" class="bg-surface text-ink border-t border-slate-200/70 py-12 lg:py-16 overflow-hidden">
-    <div class="mx-auto max-w-content px-5 lg:px-8 text-center mb-9">
+  <section id="marcas" class="bg-surface text-ink border-t border-slate-200/70 py-16 lg:py-20 overflow-hidden">
+    <!-- Baterías que trabajamos -->
+    <div class="mx-auto max-w-content px-5 lg:px-8 text-center" data-reveal>
+      <p class="section-eyebrow center">Las baterías que trabajamos</p>
+      <h2 class="mt-4 font-display font-bold text-2xl sm:text-3xl text-ink">Moura y Mateo, las marcas que instalamos</h2>
+      <div class="battery-brands mt-9">
+        <div class="battery-brand"><img src="assets/img/logo-baterias-moura.svg" alt="Baterías Moura" width="260" height="56" loading="lazy" /></div>
+        <div class="battery-brand"><img class="logo-mateo" src="assets/img/mateo-logo.png" alt="Baterías Mateo" width="260" height="56" loading="lazy" /></div>
+      </div>
+    </div>
+
+    <!-- Compatibles con autos -->
+    <div class="mx-auto max-w-content px-5 lg:px-8 text-center mt-16 mb-9">
       <p class="section-eyebrow center">Compatibles</p>
-      <h2 class="mt-4 font-display font-bold text-2xl sm:text-3xl text-ink">Trabajamos con todas las marcas</h2>
+      <h2 class="mt-4 font-display font-bold text-2xl sm:text-3xl text-ink">Compatibles con todas las marcas de autos</h2>
     </div>
     <div class="marquee" aria-label="Marcas de autos compatibles">
       <ul class="marquee-track" id="brand-marquee">
@@ -421,21 +433,49 @@
   <!-- ============================================================= -->
   <!-- BANDA "A DOMICILIO"                                           -->
   <!-- ============================================================= -->
-  <section class="domicilio-band" aria-label="Servicio a domicilio">
-    <div class="domicilio-bg" aria-hidden="true"></div>
-    <div class="domicilio-overlay" aria-hidden="true"></div>
-    <div class="relative z-[2] mx-auto max-w-content px-5 lg:px-8 py-24 lg:py-32 text-white text-center">
-      <div data-reveal>
+  <section class="cta-band" aria-label="Servicio a domicilio">
+    <div class="relative z-[1] mx-auto max-w-content px-5 lg:px-8 py-20 lg:py-28 text-white">
+      <div class="text-center max-w-2xl mx-auto" data-reveal>
         <p class="section-eyebrow on-dark center">A domicilio</p>
-        <h2 class="mt-5 font-display font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight max-w-3xl mx-auto">
+        <h2 class="mt-5 font-display font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight">
           Vamos donde estés y te dejamos el auto <span class="text-energy">andando</span>
         </h2>
-        <p class="mt-5 text-lg text-slate-200 max-w-2xl mx-auto">
+        <p class="mt-5 text-lg text-slate-300">
           Nuestro equipo lleva la batería a tu domicilio, asegurando una experiencia cómoda y confiable.
         </p>
+      </div>
+
+      <div class="steps-row mt-14" data-reveal>
+        <article class="step">
+          <span class="step-num">01</span>
+          <span class="step-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.207zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></span>
+          <h3 class="step-t">Escribinos por WhatsApp</h3>
+          <p class="step-s">Coordinás el día y el horario en un minuto.</p>
+        </article>
+
+        <span class="step-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
+        <article class="step">
+          <span class="step-num">02</span>
+          <span class="step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></span>
+          <h3 class="step-t">Vamos a tu domicilio</h3>
+          <p class="step-s">Donde estés, sin que tengas que mover el auto.</p>
+        </article>
+
+        <span class="step-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
+        <article class="step">
+          <span class="step-num">03</span>
+          <span class="step-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span>
+          <h3 class="step-t">Te dejamos el auto andando</h3>
+          <p class="step-s">Cambio en el momento, sin desprogramar nada.</p>
+        </article>
+      </div>
+
+      <div class="mt-14 text-center" data-reveal>
         <a href="https://api.whatsapp.com/send?phone=541158410072&text=Hola%2C%20necesito%20ayuda%20con%20la%20compra%20de%20una%20bater%C3%ADa.%20Gracias."
            target="_blank" rel="noopener"
-           class="btn mt-9 inline-flex items-center justify-center gap-2.5 rounded-full bg-wa px-8 py-4 text-base font-bold text-wa-900 btn-wa">
+           class="btn inline-flex items-center justify-center gap-2.5 rounded-full bg-wa px-8 py-4 text-base font-bold text-wa-900 btn-wa">
           <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.207zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
           Coordiná tu cambio
         </a>
@@ -507,19 +547,20 @@
   <!-- FAQ                                                           -->
   <!-- ============================================================= -->
   <section id="faq" class="py-20 lg:py-28 bg-surface text-ink">
-    <div class="mx-auto max-w-3xl px-5 lg:px-8">
+    <div class="mx-auto max-w-content px-5 lg:px-8">
       <div class="text-center" data-reveal>
         <p class="section-eyebrow center">Preguntas frecuentes</p>
         <h2 class="section-title mt-4">Todo lo que necesitás saber</h2>
       </div>
-      <div class="mt-10 space-y-3">
-        <details class="faq-item"><summary>¿La entrega y la instalación tienen costo?</summary><div class="faq-a">No. La entrega y la instalación de la batería son <strong>sin cargo</strong> en San Andrés y zona. Solo pagás la batería: coordinás por WhatsApp, vamos a tu domicilio y te dejamos el auto andando.</div></details>
-        <details class="faq-item"><summary>¿Hacen el cambio de batería a domicilio?</summary><div class="faq-a">Sí. Nuestro equipo va donde estés —tu casa, el trabajo o donde quedaste varado— y hace el cambio en el momento. También podés acercarte a nuestro local a la calle en Islas Malvinas 2605, San Andrés.</div></details>
-        <details class="faq-item"><summary>¿El cambio de batería borra la configuración del auto?</summary><div class="faq-a">No. Hacemos el cambio manteniendo la línea siempre alimentada, así no se desprograman el estéreo, la computadora de abordo ni los sistemas satelitales. Lo realiza personal idóneo y capacitado.</div></details>
-        <details class="faq-item"><summary>¿Cómo sé qué batería necesito?</summary><div class="faq-a">Te asesoramos sin compromiso. Con 20 años de experiencia, te ayudamos a elegir la batería correcta para tu auto según el modelo y el uso, para que dure y no te falle.</div></details>
-        <details class="faq-item"><summary>¿Qué marcas trabajás?</summary><div class="faq-a">Trabajamos <strong>Baterías Moura</strong> y <strong>Baterías Mateo</strong>.</div></details>
-        <details class="faq-item"><summary>¿Qué zonas cubren?</summary><div class="faq-a">Trabajamos en San Andrés y todo el Gran Buenos Aires. Si no estás seguro de si llegamos a tu zona, escribinos por WhatsApp y te confirmamos al toque.</div></details>
-        <details class="faq-item"><summary>¿Cómo coordino el cambio?</summary><div class="faq-a">Escribinos por WhatsApp al 11-5841-0072 (o llamanos). Coordinamos el horario, vamos a tu domicilio y resolvemos todo en el día.</div></details>
+      <div class="mt-10 grid md:grid-cols-2 gap-3 items-start">
+        <details class="faq-item" data-reveal-x="left"><summary>¿La entrega y la instalación tienen costo?</summary><div class="faq-a">No. La entrega y la instalación de la batería son <strong>sin cargo</strong> en San Andrés y zona. Solo pagás la batería: coordinás por WhatsApp, vamos a tu domicilio y te dejamos el auto andando.</div></details>
+        <details class="faq-item" data-reveal-x="right"><summary>¿Hacen el cambio de batería a domicilio?</summary><div class="faq-a">Sí. Nuestro equipo va donde estés —tu casa, el trabajo o donde quedaste varado— y hace el cambio en el momento. También podés acercarte a nuestro local a la calle en Islas Malvinas 2605, San Andrés.</div></details>
+        <details class="faq-item" data-reveal-x="left"><summary>¿El cambio de batería borra la configuración del auto?</summary><div class="faq-a">No. Hacemos el cambio manteniendo la línea siempre alimentada, así no se desprograman el estéreo, la computadora de abordo ni los sistemas satelitales. Lo realiza personal idóneo y capacitado.</div></details>
+        <details class="faq-item" data-reveal-x="right"><summary>¿Cómo sé qué batería necesito?</summary><div class="faq-a">Te asesoramos sin compromiso. Con 20 años de experiencia, te ayudamos a elegir la batería correcta para tu auto según el modelo y el uso, para que dure y no te falle.</div></details>
+        <details class="faq-item" data-reveal-x="left"><summary>¿Qué marcas trabajás?</summary><div class="faq-a">Trabajamos <strong>Baterías Moura</strong> y <strong>Baterías Mateo</strong>.</div></details>
+        <details class="faq-item" data-reveal-x="right"><summary>¿Qué zonas cubren?</summary><div class="faq-a">Trabajamos en San Andrés y todo el Gran Buenos Aires. Si no estás seguro de si llegamos a tu zona, escribinos por WhatsApp y te confirmamos al toque.</div></details>
+        <details class="faq-item" data-reveal-x="left"><summary>¿Cómo coordino el cambio?</summary><div class="faq-a">Escribinos por WhatsApp al <a href="https://api.whatsapp.com/send?phone=541158410072&text=Hola%2C%20necesito%20ayuda%20con%20la%20compra%20de%20una%20bater%C3%ADa.%20Gracias." target="_blank" rel="noopener" class="text-moura-600 font-semibold underline-offset-2 hover:underline hover:text-energy transition-colors">11-5841-0072</a> (o llamanos). Coordinamos el horario, vamos a tu domicilio y resolvemos todo en el día.</div></details>
+        <details class="faq-item" data-reveal-x="right"><summary>¿Cuál es el horario de atención?</summary><div class="faq-a">Atendemos de <strong>lunes a viernes de 8 a 13 h y de 15 a 18:30 h</strong>, y <strong>sábados de 9 a 13 h</strong>.</div></details>
       </div>
     </div>
   </section>

@@ -74,7 +74,7 @@
 
   /* ---------- SCROLL REVEAL ---------- */
   function reveal() {
-    const items = $$('[data-reveal]');
+    const items = $$('[data-reveal], [data-reveal-x]');
     if (!items.length) return;
     if (reduceMotion || !('IntersectionObserver' in window)) {
       items.forEach(el => el.classList.add('in'));
@@ -246,6 +246,32 @@
     });
   }
 
+  /* ---------- SERVICIOS en mobile: efecto al aparecer + tap para seleccionar ----------
+     En desktop las cards usan :hover. En táctil no hay hover, así que el efecto
+     se dispara cuando cada card entra en pantalla y al tocarla se selecciona. */
+  function serviceCards() {
+    const cards = $$('.service-card');
+    if (!cards.length) return;
+    if (!window.matchMedia('(hover: none)').matches) return;  // desktop: usa :hover
+
+    // Tap → seleccionar esa card (resalta una, apaga las demás)
+    cards.forEach(c => c.addEventListener('click', () => {
+      cards.forEach(o => o.classList.toggle('is-active', o === c));
+    }));
+
+    // A medida que aparecen en pantalla, se activan
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('is-active'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.4 });
+      cards.forEach(c => io.observe(c));
+    } else {
+      cards.forEach(c => c.classList.add('is-active'));
+    }
+  }
+
   /* ---------- AÑO en el footer ---------- */
   function year() {
     $$('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
@@ -262,6 +288,7 @@
     counters();
     reviews();
     premiumCard();
+    serviceCards();
     year();
   }
 
