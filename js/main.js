@@ -156,7 +156,11 @@
       const card = cards[0];
       const gap = 20; // 1.25rem
       const step = (card.getBoundingClientRect().width + gap) * pv;
-      track.style.transform = 'translateX(' + (-step * page) + 'px)';
+      // Limitar el desplazamiento al máximo real: así la última página queda
+      // alineada a la derecha y siempre se ven recuadros completos (sin huecos).
+      const maxScroll = Math.max(0, track.scrollWidth - track.parentElement.clientWidth);
+      const offset = Math.min(step * page, maxScroll);
+      track.style.transform = 'translateX(' + (-offset) + 'px)';
       $$('button', dotsWrap).forEach((d, i) => d.classList.toggle('active', i === page));
     };
 
@@ -181,7 +185,19 @@
 
     buildDots();
     render();
-    startAuto();
+
+    // El auto-avance NO arranca hasta que la sección entra en pantalla.
+    // Así, al llegar, el carrusel está en la primera opinión y recién
+    // entonces empieza a rotar; cuando sale de pantalla, se detiene.
+    if ('IntersectionObserver' in window) {
+      const viewport = track.closest('.reviews-carousel') || track.parentElement;
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { e.isIntersecting ? startAuto() : stopAuto(); });
+      }, { threshold: 0.35 });
+      io.observe(viewport);
+    } else {
+      startAuto();
+    }
   }
 
   /* ---------- TARJETA PREMIUM (Nosotros) — adaptación vanilla del

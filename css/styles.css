@@ -33,7 +33,7 @@
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
-body { overflow-x: hidden; }
+body { overflow-x: clip; }
 
 /* Accesibilidad: link de salto */
 .skip-link {
@@ -539,10 +539,16 @@ body { overflow-x: hidden; }
 
 /* Banda "A domicilio" v2 — sin foto: grilla + glow + 3 pasos */
 .cta-band {
-  position: relative; overflow: hidden;
+  position: sticky; top: 0; z-index: 0; overflow: hidden;
+  min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
   background: radial-gradient(120% 100% at 50% 0%, #0F1B33 0%, #070B16 70%);
   border-top: 1px solid rgba(255,255,255,.07);
   border-bottom: 1px solid rgba(255,255,255,.07);
+}
+/* Las secciones que vienen después tapan la banda fijada al subir */
+.cta-band ~ section { position: relative; z-index: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .cta-band { position: relative; min-height: 0; display: block; }
 }
 .cta-band::before {
   content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: .6;
