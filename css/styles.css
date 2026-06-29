@@ -539,16 +539,19 @@ body { overflow-x: clip; }
 
 /* Banda "A domicilio" v2 — sin foto: grilla + glow + 3 pasos */
 .cta-band {
-  position: sticky; top: 0; z-index: 0; overflow: hidden;
-  min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
+  position: relative; overflow: hidden;
   background: radial-gradient(120% 100% at 50% 0%, #0F1B33 0%, #070B16 70%);
   border-top: 1px solid rgba(255,255,255,.07);
   border-bottom: 1px solid rgba(255,255,255,.07);
 }
-/* Las secciones que vienen después tapan la banda fijada al subir */
-.cta-band ~ section { position: relative; z-index: 1; }
-@media (prefers-reduced-motion: reduce) {
-  .cta-band { position: relative; min-height: 0; display: block; }
+/* Banda fija + secciones siguientes que la tapan: SOLO en escritorio.
+   En móvil queda estática (sin el "freno" del sticky al scrollear). */
+@media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+  .cta-band {
+    position: sticky; top: 0; z-index: 0;
+    min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
+  }
+  .cta-band ~ section { position: relative; z-index: 1; }
 }
 .cta-band::before {
   content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: .6;
